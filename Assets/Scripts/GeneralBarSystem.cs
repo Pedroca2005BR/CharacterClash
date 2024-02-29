@@ -42,4 +42,9 @@ public class GeneralBarSystem
     {
         return currentValue == 0;
     }
+
+    public bool CheckIfFull()
+    {
+        return (currentValue == maxValue);
+    }
 }
