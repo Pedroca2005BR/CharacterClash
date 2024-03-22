@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class SkillSelectionBattleState : BaseBattleState
 {
+    BaseCharacter character;
+
     public override void EnterState(BattleStateManager context)
     {
-        throw new System.NotImplementedException();
+        character = context.teamInformationHolder.GetCharacterByPosition(context.currentTurn);
+        context.OnSkillSelectionStart.Raise(context, character);
     }
 
     public override void UpdateState(BattleStateManager context)
     {
-        throw new System.NotImplementedException();
+        
     }
 }

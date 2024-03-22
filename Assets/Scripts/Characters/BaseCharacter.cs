@@ -112,6 +112,11 @@ public class BaseCharacter : MonoBehaviour
         return normalSkillList;
     }
 
+    public Skill GetUltimate()
+    {
+        return Ultimate;
+    }
+
     //IdentificationMethods
     public bool IsBlueTeam()
     {

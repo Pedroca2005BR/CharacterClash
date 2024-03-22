@@ -48,7 +48,7 @@ public class Skill : ScriptableObject
     //so tem um super tipo, mas pode ter varios subtipos
     [Header("Typing")]
     public SkillSuperType superType;
-    public List<SkillSubType> subTypes; 
+    public List<SkillSubType> subTypes;
 
     //Tipos possiveis de alvo e se pode acertar mais de um
     [Header("Targets")]
@@ -59,4 +59,7 @@ public class Skill : ScriptableObject
     public List<StatusEffect> statusEffects;
     public List<Stat> statsBuffed;
     public List<int> buffsLifetime;
+
+    [Header("Description")]
+    public string description;
 }

@@ -7,5 +7,6 @@ public class TransformationSkill : Skill
 {
     [Header("Transformation Specifics")]
     public int duration;
+    public bool healsToFull;
     public GameObject newModel;
 }

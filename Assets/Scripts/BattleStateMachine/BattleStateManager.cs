@@ -16,11 +16,19 @@ public class BattleStateManager : MonoBehaviour
     public TargetSelectionBattleState targetSelectionBattleState = new TargetSelectionBattleState();
 
     //Events
+    [Header("Events")]
     public GameEvent OnStartOfBattle;
+    public GameEvent OnSkillSelectionStart;
+
+    //necessaryInformation
+    [Header("Information")]
+    public TeamInformationHolder teamInformationHolder;
+    public int currentTurn;
 
     private void Start()
     {
         currentState = startOfBattleBattleState;
+        currentTurn = 0;
 
         currentState.EnterState(this);
     }
