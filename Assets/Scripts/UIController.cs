@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
-    private void Start()
-    {
-        
-    }
-
     public void UpdateSkillSelection(Component character, object data)
     {
         if (character.GetType() != typeof(BaseCharacter))

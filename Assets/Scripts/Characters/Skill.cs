@@ -23,7 +23,9 @@ public enum TargetType
     FrontRow,
     BackRow,
     Ally,
-    Self
+    Self,
+    AllEnemies,
+    AllAllies
 }
 
 public enum StatusEffect

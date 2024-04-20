@@ -24,6 +24,8 @@ public class BattleStateManager : MonoBehaviour
     [Header("Information")]
     public TeamInformationHolder teamInformationHolder;
     public int currentTurn;
+    public Skill currentSkill;
+    public int[] currentTarget;
 
     private void Start()
     {
@@ -42,5 +44,35 @@ public class BattleStateManager : MonoBehaviour
     {
         currentState = state;
         currentState.EnterState(this);
+    }
+
+
+
+
+    //#######################################################################################
+    //Game Event Listeners
+
+    public void ListenToMove(Component sender, object data)
+    {
+        if (data.GetType() == typeof(Skill))
+        {
+            currentSkill = (Skill)data;
+        }
+    }
+
+    public void ListenToTarget(Component sender, object data)
+    {
+        if (data.GetType() != typeof(int[]))
+        {
+            Debug.Log("Battle Manager trying to get Targets, but Failing!");
+        }
+
+        int[] newData = (int[])data;
+
+        currentTarget = new int[newData.Length];
+        for (int i = 0; i < newData.Length; i++)
+        {
+            currentTarget[i] = newData[i];
+        }
     }
 }

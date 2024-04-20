@@ -55,6 +55,7 @@ public class SkillButtonPanels : MonoBehaviour
         }
 
         character = (BaseCharacter)data;
+        RestartButtons();
         restartText.Raise(this, null);
     }
 }
